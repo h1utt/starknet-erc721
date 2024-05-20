@@ -1,0 +1,1 @@
+A simple NFT Collection Factory to create your own NFT Collection!
