@@ -50,9 +50,9 @@ mod MyNFT {
     #[constructor]
     fn constructor(ref self: ContractState, _deploy_data: DeployCallData) {
         let factory_address: ContractAddress =
-            0x04622a2e14aeef4593201568a8e99cd4b8d99b651587722d1b1f349e36746c4c
+            YOUR_FACTORY_ADDRESS_GOES_HERE
             .try_into()
-            .unwrap();
+            .unwrap(); // Add your factory address here to ensure that only the factory can deploy the NFT Collection
         assert(get_caller_address() == factory_address, Errors::NOT_FACTORY);
 
         let name = _deploy_data._name;
