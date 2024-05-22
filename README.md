@@ -48,7 +48,8 @@ scarb build
 ```
 
 - Declare NFTCollectionFactory contract
-```starkli declare target/dev/nft_collection_NFTCollectionFactory.contract_class.json --rpc <RPC_URL>
+```
+starkli declare target/dev/nft_collection_NFTCollectionFactory.contract_class.json --rpc <RPC_URL>
 ```
 
 - You'll notice the contract CLASS_HASH after declaring. Then, deploy NFTCollectionFactory contract
@@ -56,7 +57,7 @@ scarb build
 starkli deploy <YOUR_FACTORY_CLASS_HASH> <SMART_WALLET_ADDRESS> --rpc <RPC_URL>
 ```
 
-- Grab the NFTCollectionFactory contract and paste it under `constructor` function
+- Grab the NFTCollectionFactory contract address and paste it under `constructor` function in `MyNFT` contract
 ```
 #[constructor]
     fn constructor(ref self: ContractState, _deploy_data: DeployCallData) {
@@ -94,7 +95,7 @@ const symbol = "YOUR_NFT_COLLECTION_SYMBOL_GOES_HERE!!!";
 const base_uri = "YOUR_NFT_COLLECTION_URI_GOES_HERE!!!";
 ```
 
-- Deploy your own!
+- Deploy your own NFT Collection!!!
 ```
 npx ts-node scripts/01-deploy-nft-collection.ts
 ```
